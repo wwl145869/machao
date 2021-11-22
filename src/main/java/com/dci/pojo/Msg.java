@@ -1,5 +1,6 @@
 package com.dci.pojo;
 
+import com.alibaba.fastjson.JSONArray;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.*;
@@ -22,6 +23,8 @@ public class Msg {
     private String Token;
     @ApiModelProperty("信息")
     private String info;
+    @ApiModelProperty("数据")
+    private JSONArray data;
 
     public Msg(String msg, int code, String error, String token) {
         this.msg = msg;
@@ -34,5 +37,11 @@ public class Msg {
         this.msg = msg;
         this.code = code;
         this.info = info;
+    }
+
+    public Msg(String msg, int code, JSONArray data) {
+        this.msg = msg;
+        this.code = code;
+        this.data = data;
     }
 }

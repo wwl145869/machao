@@ -65,7 +65,7 @@ public class UserService implements UserInterface {
     public Msg chuli(Boolean reqsession, String token,User user){
         Msg msg =null;
         if(reqsession){
-            redisUtil.setIfTimeout("token:"+user.getUsername(),token,600);
+            redisUtil.setIfTimeout("token:"+user.getUsername(),token,3600);
             msg = new Msg("登录成功", 200, null,token);
             return msg;
         }else{
