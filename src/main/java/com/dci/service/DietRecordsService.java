@@ -32,7 +32,12 @@ public class DietRecordsService implements DietRecordsInterface {
         }
     }
     public List queryAll() {
-        List<DietRecords> dietRecords = dietRecordsMapper.queryAll();
+        List<DietRecords> dietRecords = null;
+        try {
+            dietRecords = dietRecordsMapper.queryAll();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         return dietRecords;
     }
