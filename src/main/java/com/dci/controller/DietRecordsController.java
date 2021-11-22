@@ -63,7 +63,6 @@ public class DietRecordsController {
     public Msg queryAll(){
         List<DietRecords> list = dietRecordsInterface.queryAll();
         String s = JSONObject.toJSONString(list);
-        System.err.println(s);
         return  new Msg("查询成功", 200,s);
     }
 }
