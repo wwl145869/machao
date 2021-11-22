@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dci.mapper.DietRecordsMapper">
+
+    <insert id="write" parameterType="DietRecords">
+insert into dietrecords(id,userid,jlsj,xz,swmc,cal,hd,sg,gzzt,tqid)VALUES (#{id},#{userid},#{jlsj},#{xz},#{swmc},#{cal},#{hd},#{sg},#{gzzt},#{tqid})
+    </insert>
+    <select id="queryId" parameterType="DietRecords" resultType="DietRecords">
+
+    </select>
+    <select id="queryAll"   resultType="DietRecords">
+        select * from dietrecords
+    </select>
+    <!--<insert id="add" parameterType="Session">-->
+    <!--INSERT  INTO  Session()VALUES ()-->
+
+    <!--</insert>-->
+
+    <!--<insert id="addDept" parameterType="Dept" >-->
+    <!--INSERT INTO dept (dname,db_source)VALUES (#{dname},DATABASE())-->
+    <!--</insert>-->
+
+    <!--<select id="queryById" resultType="Dept" parameterType="long"  >-->
+    <!--SELECT  *  FROM dept WHERE depton=#{depton}-->
+    <!--</select>-->
+
+    <!--<select id="queryAll" resultType="Dept">-->
+    <!--SELECT  *  FROM dept-->
+    <!--</select>-->
+
+
+
+
+</mapper>
