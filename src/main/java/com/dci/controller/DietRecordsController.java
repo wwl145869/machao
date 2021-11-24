@@ -71,7 +71,9 @@ public class DietRecordsController {
                 //用户存在,令牌吻合
                 List<DietRecords> list = dietRecordsInterface.queryAll();
                 String jsons = JSONObject.toJSONString(list);
-                return  new Msg("查询成功", 200,JSONObject.parseArray(jsons));
+                JSONArray objects = JSONObject.parseArray(jsons);
+
+                return  new Msg("查询成功", 200, objects);
             } else{
                 //令牌有误
                 return  new Msg("令牌有误", 501, "请仔细检查您传入的令牌",session.getToken());
