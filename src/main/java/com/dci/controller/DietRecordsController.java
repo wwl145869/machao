@@ -32,12 +32,14 @@ public class DietRecordsController {
     DietRecordsInterface dietRecordsInterface;
     //3、记录接口
     @PostMapping("DietRecords/writeRecords.do")
-    public Msg writeRecords(DietRecords dietRecords,Session session){//可以用session来拿到用户信息和令牌，
+    public Msg writeRecords(DietRecords dietRecords,Session session){
+        //可以用session来拿到用户信息和令牌，
         String id = UUID.randomUUID().toString();
         dietRecords.setId(id);
         String tokenache= (String)redisUtil.get("token:" + session.getUsername());
         Boolean exists = redisUtil.exists("user:" + session.getUsername());
-        return chuli(tokenache, exists, session, dietRecords);//具体处理方法;
+        //具体处理方法;
+        return chuli(tokenache, exists, session, dietRecords);
     }
     //具体处理方法
     public Msg chuli(String tokenache,Boolean exists,Session session,DietRecords dietRecords){

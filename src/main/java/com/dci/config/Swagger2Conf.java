@@ -33,6 +33,7 @@ public class Swagger2Conf {
     }
     private ApiInfo apiInfo(){
         //作者信息
+
         Contact contact = new Contact("wanliw","http://www.chinadci.com/","1272913141@qq.com");
         return new ApiInfo(
              "Chinadci-Machao-Api",

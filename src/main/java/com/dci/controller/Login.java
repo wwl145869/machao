@@ -42,9 +42,6 @@ public class Login {
         Boolean reqsession = redisUtil.sIsMember("sessionId", request.getSession().getId());//查看缓存中是否存在会话
         return userInterface.chuli(reqsession,token,user);
      }
-
-
-
 //2、注册接口
 @PostMapping("Login/userSignin.do")
 public Msg  userSignin(User user){
